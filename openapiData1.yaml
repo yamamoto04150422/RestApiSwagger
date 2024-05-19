@@ -1,0 +1,26 @@
+openapi: "3.0.3"
+
+info:
+  title: Sample API
+  version: "1.0.0"
+
+paths:
+ {}
+
+components:
+  schemas:
+    # 0以上10未満
+    SampleInt:
+      type: integer
+      minimum: 0
+      exclusiveMinimum: false
+      maximum: 10
+      exclusiveMaximum: true
+    # nullを許容する10文字〜20文字
+    SampleString:
+      type: string
+      nullable: true
+      minLength: 10
+      maxLength: 20
+    SmapleBool:
+      type: boolean

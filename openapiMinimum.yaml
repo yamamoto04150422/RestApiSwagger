@@ -1,0 +1,15 @@
+# 最低限の記載
+
+openapi: "3.0.3"
+
+info:
+ title: "sample"
+ version: "1.0.0"
+
+servers: []
+
+paths: {}
+
+security: []
+
+components: {}

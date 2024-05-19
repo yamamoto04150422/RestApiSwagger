@@ -1,0 +1,57 @@
+# Request Parameter
+
+openapi: "3.0.0"
+
+info:
+  title: "Shop Review API"
+  description: |
+    # Features
+    - Get reviews.
+    - Post review.
+  termsOfService: "https://tastylog.com/terms/"
+  contact:
+    name: "Customer Support"
+    url: "https://tastylog.com/support/"
+    email: "support-desk@tastylog.com"
+  license:
+    name: "MIT License"
+    url: "https://opensource.org/licenses/MIT"
+  version: "1.0.0"
+
+servers: 
+  - url: "http://localhost:{port}"
+    description: "Local Development"
+    variables:
+      port:
+        enum: ["3000", "8080"]
+        default: "3000"
+  - url: "https://it1.tastylog.com/v1"
+    description: "Integration Test"
+  - url: "https://stg.tastylog.com/v1"
+    description: "Staging"
+  - url: "https://api.tastylog.com/v1"
+    description: "Production"
+
+paths:
+  "/shops/{shopId}/reviews":
+    post:
+      summary: "Create review"
+      parameters:
+      - name: shopId
+        in: path
+        description: "Shop identifier"
+        required: true
+        schema: { type: string }
+      - name: x-api-key
+        in: header
+        description: "Request user's identifier"
+        schema: { type: string }
+        example: "XXXX-XXXX-XXXX-XXXX"
+      - name: token
+        in: cookie
+        description: "One time token"
+        schema: { type: string }
+      responses:
+        "201":
+          description: "Success operationi"
+

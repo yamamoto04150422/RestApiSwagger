@@ -1,0 +1,59 @@
+openapi: "3.0.0"
+
+info:
+  title: "Shop Review API"
+  description: |
+    # Features
+    - Get reviews.
+    - Post review.
+  termsOfService: "https://tastylog.com/terms/"
+  contact:
+    name: "Customer Support"
+    url: "https://tastylog.com/support/"
+    email: "support-desk@tastylog.com"
+  license:
+    name: "MIT License"
+    url: "https://opensource.org/licenses/MIT"
+  version: "1.0.0"
+
+servers: 
+  - url: "http://localhost:{port}"
+    description: "Local Development"
+    variables:
+      port:
+        enum: ["3000", "8080"]
+        default: "3000"
+  - url: "https://it1.tastylog.com/v1"
+    description: "Integration Test"
+  - url: "https://stg.tastylog.com/v1"
+    description: "Staging"
+  - url: "https://api.tastylog.com/v1"
+    description: "Production"
+
+tags:
+- name: "reviews"
+  description: "Shop review operation"
+
+paths:
+  "/shops/{shopId}/reviews":
+    parameters:
+    - name: shopId
+      in: path
+      required: true
+      schema: { type: string }
+    get:
+      summary: "Get shop review"
+      tags: ["reviews"]
+      responses:
+        "200":
+          description: "Success operation"
+    post:
+      summary: "Create new review"
+      tags: ["reviews"]
+      requestBody:
+        content:
+          application/json:
+            schema: { type: string }
+      responses:
+        "201":
+          description: "Success operation"

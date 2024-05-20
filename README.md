@@ -11,6 +11,12 @@
 - Json
 - XML
 
+## tool
+
+https://onlineyamltools.com/convert-yaml-to-json
+
+https://www.yamllint.com/
+
 ## 比較
 
 | 特徴      | YAML | JSON | XML  |

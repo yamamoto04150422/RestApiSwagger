@@ -1,4 +1,9 @@
 
+実行方法は以下のREADME.mdを見ること
+
+RestApiSwagger/stab/README.md
+
+
 # YAML　とは
 
 **データを記述する**ために使用される形式言語
@@ -10,6 +15,12 @@
 - Yaml
 - Json
 - XML
+
+## tool
+
+https://onlineyamltools.com/convert-yaml-to-json
+
+https://www.yamllint.com/
 
 ## 比較
 
